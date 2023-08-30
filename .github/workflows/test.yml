@@ -16,5 +16,9 @@ jobs:
           java-version: '17'
           distribution: 'corretto'
 
+      - name: get build time
+        id: build-time
+        run:  echo "buildtime=$(date +%Y%m%d%H%M%S)" >> $GITHUB_OUTPUT
+
       - name: Build JAR
-        run: mvn package -DBUILD_TIMESTAMP=20230830    # Use 'mvn' command instead of './mvnw'
+        run: mvn package -DBUILD_TIMESTAMP=${{ steps.build-time.outputs.buildtime }}    # Use 'mvn' command instead of './mvnw'
