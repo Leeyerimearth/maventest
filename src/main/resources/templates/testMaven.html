@@ -6,7 +6,7 @@ layout:decorate="~{layout/main_layout}">
     <meta charset="UTF-8">
     <title>Title</title>
     <link th:href="'../test.css?q=' + ${q}" rel="stylesheet" type="text/css" />
-    <link th:href="'../test.css?q=' + ${@environment.getProperty('buildtime')}" rel="stylesheet" type="text/css" />
+    <link th:href="'../test.' + ${@environment.getProperty('buildtime')} + '.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 

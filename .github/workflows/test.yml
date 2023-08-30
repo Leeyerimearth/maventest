@@ -17,4 +17,4 @@ jobs:
           distribution: 'corretto'
 
       - name: Build JAR
-        run: mvn package -DBUILD_TIMESTAMP=$(date +%Y%m%d%H%M%S)      # Use 'mvn' command instead of './mvnw'
+        run: mvn package -DBUILD_TIMESTAMP=20230830    # Use 'mvn' command instead of './mvnw'
