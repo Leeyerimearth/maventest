@@ -17,15 +17,4 @@ jobs:
           distribution: 'corretto'
 
       - name: Build JAR
-        run: mvn package  # Use 'mvn' command instead of './mvnw'
-
-      - name: Use Timestamp in Build
-        run: |
-          # Use the build timestamp from the pom.xml properties in your build/test commands
-          echo "Using BUILD_TIMESTAMP: ${maven.build.timestamp}"
-          echo "::set-output name=custom_timestamp::${maven.build.timestamp}"
-
-      - name: Use Custom Timestamp in Build
-        run: |
-          # Use the custom timestamp in your build/test commands
-          echo "Using CUSTOM_TIMESTAMP: ${{ steps.use-timestamp-in-build.outputs.custom_timestamp }}"
+        run: mvn package -DBUILD_TIMESTAMP=$(date +%Y%m%d%H%M%S)      # Use 'mvn' command instead of './mvnw'
