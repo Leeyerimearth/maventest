@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+layout:decorate="~{layout/main_layout}">
+<head th:with="q=${@environment.getProperty('static.resource.version')}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="'../static/test.css?q=' + ${q}" rel="stylesheet" type="text/css" />
+</head>
+<body>
+
+</body>
+</html>
